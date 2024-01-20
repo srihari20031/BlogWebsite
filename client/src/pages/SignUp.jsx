@@ -12,7 +12,8 @@ const SignUp = () => {
 
   const register = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:3000/api/auth/register", {
+    const authURL = `${import.meta.env.VITE_REACT_AUTH_URL}/register`;
+    const response = await fetch(authURL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password, email }),

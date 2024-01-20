@@ -19,8 +19,9 @@ const CreatePost = () => {
     data.set("content", content);
     console.log(files);
     e.preventDefault();
+    const postURL = `${import.meta.env.VITE_REACT_POST_URL}/post`
 
-    const response = await fetch("http://localhost:3000/post", {
+    const response = await fetch(postURL, {
       method: "POST",
       body: data,
       credentials: "include",

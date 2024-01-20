@@ -8,8 +8,10 @@ const PostPage = () => {
     const [postInfo,setPostInfo] = useState(null);
     const {userInfo} = useContext(UserContext);
     const {id} = useParams();
+
+    const postPage = `${import.meta.env.VITE_REACT_POST_URL}/post/`
     useEffect(() => {
-      fetch(`http://localhost:3000/post/${id}`)
+      fetch(`${postPage}${id}`)
         .then(response => {
           response.json().then(postInfo => {
             setPostInfo(postInfo);

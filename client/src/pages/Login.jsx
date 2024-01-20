@@ -3,6 +3,7 @@ import { Navigate } from "react-router";
 import { ToastContainer, toast } from "react-toastify";
 import { UserContext } from "../context/UserContext";
 
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -10,7 +11,8 @@ const Login = () => {
   const { setUserInfo } = useContext(UserContext);
   async function login(ev) {
     ev.preventDefault();
-    const response = await fetch("http://localhost:3000/api/auth/login", {
+    const authURL = `${import.meta.env.VITE_REACT_AUTH_URL}/login`
+    const response = await fetch(authURL, {
       method: "POST",
       body: JSON.stringify({ email, password }),
       headers: { "Content-Type": "application/json" },
