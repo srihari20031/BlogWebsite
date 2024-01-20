@@ -9,9 +9,8 @@ router.use(cookieParser())
 router.use(
     cors({
         credentials: true,
-        origin: "https://blog-website-e9wz1vpa3-srihari20031.vercel.app/",
+        origin: "http://localhost:5173",
         optionsSuccessStatus: 200,
-        
     })
 )
 
