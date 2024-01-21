@@ -15,7 +15,7 @@ router.use(cookieParser());
 router.use(
   cors({
     credentials: true,
-    origin: "http://localhost:5173",
+    origin: "https://srihari-blogfrontend.onrender.com/",
     optionsSuccessStatus: 200,
   })
 );
