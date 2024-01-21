@@ -4,8 +4,11 @@ import { UserContext } from "../context/UserContext";
 
 const Header = () => {
   const { setUserInfo, userInfo } = useContext(UserContext);
+
+  const mainURL = `${import.meta.env.VITE_REACT_AUTH_URL}`
+  
   useEffect(() => {
-    fetch("http://localhost:3000/api/auth/profile", {
+    fetch(`${mainURL}/profile`, {
       credentials: "include",
     }).then((response) => {
       response.json().then((userInfo) => {
@@ -15,7 +18,7 @@ const Header = () => {
   }, []);
 
   const logout = () => {
-    fetch("http://localhost:3000/api/auth/logout", {
+    fetch(`{mainURL}/logout`, {
       credentials: "include",
       method: "POST",
     });
