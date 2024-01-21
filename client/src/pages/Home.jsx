@@ -3,8 +3,9 @@ import Post from "../components/Post";
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
+  const displayURL = `${import.meta.env.VITE_REACT_POST_URL}/post`
   useEffect(() => {
-    fetch("http://localhost:3000/post").then((response) => {
+    fetch(displayURL).then((response) => {
       response.json().then((posts) => {
         setPosts(posts);
       });
